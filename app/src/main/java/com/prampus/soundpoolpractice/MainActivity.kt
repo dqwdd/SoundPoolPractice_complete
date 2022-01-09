@@ -24,6 +24,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
+
+        binding.tv.setOnClickListener {
+            soundPool.play(1, 4F, 4F, 1, 1, 1F)
+        }
+
+
+
         soundPool = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             SoundPool.Builder()
                 .setAudioAttributes(
@@ -46,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        soundPool.play(1, 4F, 4F, 1, 1, 1F)
+
 
 
     }
